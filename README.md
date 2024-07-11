@@ -16,6 +16,18 @@ Este é um projeto de website para uma clínica de odontologia, desenvolvido por
 A "Clínica de Odontologia" oferece serviços odontológicos com atendimento de segunda a sábado. A página principal contém informações sobre os horários de atendimento e um botão para agendar consultas.
 
 ## Estrutura do Projeto
+/
+├── css/
+│ └── styles.css
+├── src/
+│ └── css/
+│ └── styles.css
+├── agendamento.html
+├── index.html
+├── script.js
+└── README.md
+
+
 
 Contato
 Para mais informações, entre em contato:
