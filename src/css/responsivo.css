@@ -1,0 +1,221 @@
+
+body {
+    
+    backg
+
+    
+background-image: url('../imagens/teste.jpg');
+    
+    backgr
+
+    
+background-size: cover;
+    
+    backg
+
+  
+background-repeat: no-repeat;
+    
+    backgroun
+
+    bac
+
+ 
+background-position: center;
+    
+    ma
+margin: 0;
+    
+    pa
+
+ 
+padding: 0;
+    
+    
+font-family: Arial, sans-serif;
+}
+
+.titulo1 {
+    
+    text-alig
+
+    tex
+
+ 
+text-align: center;
+    
+ 
+margin-top: 20px;
+    
+   
+color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.container {
+    
+   
+position: relative;
+    
+   
+height: 100vh;
+    display: flex;
+    flex-direction: column;
+    
+    justify
+
+   
+justify-content: center;
+    
+    align
+align-items: center;
+    
+   
+text-align: center;
+}
+
+.melhor {
+    
+   
+background-color: red;
+    width: 80%; /* Ajuste para largura flexível */
+    
+    max
+max-width: 210px;
+    height: 37px;
+    display: flex;
+    
+    justify
+justify-content: center;
+    
+   
+align-items: center;
+    
+   
+color: white;
+    
+   
+margin-bottom: 20px;
+}
+
+.atendimento-header {
+    margin-bottom: 20px;
+}
+
+.horarioat, .dsemanas {
+    
+   
+margin: 0;
+    padding: 0;
+}
+
+.horario {
+    
+   
+background-color: rgba(255, 255, 255, 0.7);
+    
+    padd
+padding: 10px;
+    
+    borde
+
+ 
+border-radius: 5px;
+    
+    list-st
+
+    l
+list-style: none;
+}
+
+.horario ul {
+    
+    padd
+
+   
+padding: 0;
+    
+    mar
+
+  
+margin: 0;
+}
+
+
+}
+.horario li {
+    
+    mar
+
+ 
+margin: 5px 0;
+}
+
+/* Media queries para diferentes tamanhos de tela */
+
+@
+@media (max-width: 768px) {
+    .container {
+        
+      
+padding: 20px;
+    }
+
+    
+    }
+
+    
+.melhor {
+        
+  
+width: 100%;
+        
+   
+height: auto;
+        
+
+  
+padding: 10px;
+        font-size: 1.2em;
+    }
+
+    
+    
+.horario {
+
+   
+width: 100%;
+   
+}
+
+
+  
+@media (max-width: 480px) {
+    
+    
+.melhor {
+        
+        
+
+  
+font-size: 1em;
+
+        
+
+  
+padding: 5px;
+    }
+
+    
+    } 
+.horario {
+        
+     
+font-size: 0.9em;
+        
+ padding: 5px;
+    }
+
+
+    
+

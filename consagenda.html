@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consultas Agendadas</title>
+    <link rel="stylesheet" href="src/css/styles.css">
+    <link rel="stylesheet" href="src/css/responsivo.css">
+        <style>
+        
+        .footer-buttons {
+            margin-top: 20px; /* Adiciona espaço acima dos botões no rodapé */
+        }
+        .appointment-item {
+            margin-bottom: 10px; /* Adiciona espaço entre os itens da lista de consultas */
+        }
+        .appointment-date-time {
+            font-weight: bold; /* Destaque a data e hora */
+        }
+    </style>
+</head>
+<body>
+    <main class="container">
+        <header class="odont">
+            <h1>Consultas Agendadas</h1>
+            
+        </header>
+
+        <section class="appointments">
+            <h2>Suas Consultas</h2>
+            <div class="footer-buttons">
+                <a href="index.html" class="button">Voltar para Página Principal</a>
+                </div>
+            <ul id="appointmentList">
+                <!-- Exemplo de item de consulta -->
+                <!-- Itens de consulta serão inseridos aqui dinamicamente -->
+            </ul>
+        </section>
+    </main>
+
+    <footer id="rodape">
+        <p>&copy; 2024 - by Edenilson do Carmo<br>
+            <a href="https://facebook.com/odontonto">Facebook</a> |
+            <a href="https://twitter.com/odonto">Twitter</a>
+        </p>
+        <div class="footer-buttons">
+            <a href="agendamento.html" class="button">Voltar para Agendamento</a>
+            <a href="index.html" class="button">Voltar para Página Principal</a>
+        </div>
+    </footer>
+
+    <script>
+        // Função para cancelar consulta
+        function cancelAppointment(appointmentId) {
+            fetch(`/api/cancelar/${appointmentId}`, {
+                method: 'DELETE'
+            })
+            .then(response => response.json())
+            .then(data => {
+                alert('Consulta cancelada com sucesso!');
+                loadAppointments();
+            })
+            .catch(error => console.error('Erro:', error));
+        }
+
+        
+        const express = require('express');
+const bodyParser = require('body-parser');
+const app = express();
+const port = 3000;
+
+let appointments = [];
+
+app.use(bodyParser.json());
+
+app.post('/api/agendar', (req, res) => {
+    const appointment = {
+        id: appointments.length + 1,
+        ...req.body
+    };
+    appointments.push(appointment);
+    res.json({ message: 'Consulta agendada com sucesso!', appointment });
+});
+
+app.get('/api/consultas', (req, res) => {
+    res.json(appointments);
+});
+
+app.delete('/api/cancelar/:id', (req, res) => {
+    const id = parseInt(req.params.id, 10);
+    appointments = appointments.filter(app => app.id !== id);
+    res.json({ message: 'Consulta cancelada com sucesso!' });
+});
+
+app.listen(port, () => {
+    console.log(`Servidor rodando em http://localhost:${port}`);
+});
+        // Chama a função para carregar consultas quando a página é carregada
+        window.onload = loadAppointments;
+    </script>
+     
+</body>
+</html>
